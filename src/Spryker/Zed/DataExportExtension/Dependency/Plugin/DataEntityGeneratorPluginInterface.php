@@ -7,6 +7,7 @@
 
 namespace Spryker\Zed\DataExportExtension\Dependency\Plugin;
 
+use Generated\Shared\Transfer\DataExportConfigurationTransfer;
 use Generator;
 
 interface DataEntityGeneratorPluginInterface extends DataEntityPluginInterface
@@ -17,7 +18,9 @@ interface DataEntityGeneratorPluginInterface extends DataEntityPluginInterface
      *
      * @api
      *
+     * @param \Generated\Shared\Transfer\DataExportConfigurationTransfer $dataExportConfigurationTransfer
+     *
      * @return \Generator<\Generated\Shared\Transfer\DataExportResultTransfer>
      */
-    public function getBatchGenerator(): Generator;
+    public function getBatchGenerator(DataExportConfigurationTransfer $dataExportConfigurationTransfer): Generator;
 }
